@@ -21,6 +21,7 @@ We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-
 ## 2. Architectural Choices
 
 ### Rationale for Light DOM (No Shadow DOM)
+
 To achieve complete fidelity to the standalone, framework-free requirements, we adopted a **Light DOM Web Component Architecture** for `<sds-button>`:
 
 1. **Local Filesystem Compatibility**:
@@ -35,7 +36,9 @@ To achieve complete fidelity to the standalone, framework-free requirements, we 
 ## 3. Attribute-to-Component Mapping
 
 ### Standard Button (`<sds-button>`)
+
 The observed attributes on `<sds-button>` map directly to structure and class modifications on the internal `<button>` wrapper:
+
 - **`label`**: Extracted directly and set as `textContent` of an inner `.sds-button-label` span element. Fallback is the tag's original outer text content.
 - **`variant`**: Resolves to `.variant-[value]`. Standard options are `primary`, `neutral`, `subtle`.
 - **`size`**: Resolves to `.size-[value]`. Standard options are `medium`, `small`.
@@ -55,3 +58,22 @@ To verify visual correctness across all potential states side-by-side, we map in
 - Disabled State: `:disabled` AND `[disabled]` AND `[disabled]` attribute
 
 By mapping static properties, `index.html` renders complete design-system states and variants preview grids that visually expose all components in their custom configurations for direct engineering and design reviews.
+
+---
+
+## 5. Storybook Integration (Storybook Branch)
+
+We integrated **Storybook** on a dedicated `storybook` branch to offer an interactive component environment while keeping `index.html` clean and minimal:
+
+1. **Clean Installation**:
+   - Switched to a new `storybook` git branch.
+   - Initialized `package.json` and ran a non-interactive Storybook configuration targeted for vanilla HTML and Vite (`npx storybook init --type html --builder vite --yes`).
+2. **Environment Configuration**:
+   - Set up `.storybook/preview.js` to dynamically load global design tokens (`styles/tokens.css`), component styles (`components/button/button.css`), and register our Light DOM Web Component globally (`components/button/sds-button.js`).
+   - Configured `.storybook/main.js` to discover story files directly inside the `components/` folder, allowing us to keep story files next to their components.
+3. **Boilerplate Cleanup**:
+   - Completely deleted the default `stories/` template folder to ensure the workspace remains pristine, lightweight, and focused solely on our custom design system.
+4. **Interactive Component Stories**:
+   - Implemented `components/button/sds-button.stories.js` mapping all variants, sizes, and states (including start/end icons and disabled) to Storybook controls for real-time play and testing.
+5. **Static Showcase Simplification**:
+   - Cleanly removed the live playground section (Section 3) and sandbox controller script from `index.html`, letting the static demo focus purely on the side-by-side visual audit grid of all variants/states, while delegating interactive testing entirely to Storybook.
