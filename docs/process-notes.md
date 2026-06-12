@@ -39,25 +39,25 @@ To achieve complete fidelity to the standalone, framework-free requirements, we 
 
 The observed attributes on `<sds-button>` map directly to structure and class modifications on the internal `<button>` wrapper:
 
-- **`label`**: Extracted directly and set as `textContent` of an inner `.sds-button-label` span element. Fallback is the tag's original outer text content.
-- **`variant`**: Resolves to `.variant-[value]`. Standard options are `primary`, `neutral`, `subtle`.
-- **`size`**: Resolves to `.size-[value]`. Standard options are `medium`, `small`.
+- **`label`**: Extracted directly and set as `textContent` of an inner `.button__label` span element. Fallback is the tag's original outer text content.
+- **`variant`**: Resolves to `.button--[value]`. Standard options are `primary`, `neutral`, `subtle`.
+- **`size`**: Resolves to `.button--[value]`. Standard options are `medium`, `small`.
 - **`disabled`**: Sets the native `disabled` attribute directly on the child `<button>`.
-- **`icon-start`** and **`icon-end`**: Optional attributes that render an inline Star SVG icon inside a `.sds-button-icon` wrapper to the left (start) or right (end) of the label.
+- **`icon-start`** and **`icon-end`**: Optional attributes that render an inline Star SVG icon inside a `.button__icon` wrapper to the left (start) or right (end) of the label.
 
 ---
 
-## 4. Visual States Board Verification
+## 4. Visual States Verification
 
-To verify visual correctness across all potential states side-by-side, we map interactive states in `button.css` to both real pseudo-classes and mock static classes:
+The standard button component relies fully on native CSS pseudo-classes for active states, keeping the runtime footprint extremely lightweight and standard:
 
-- Default State: `.sds-button`
-- Hover State: `:hover` AND `.state-hover` AND `[data-state="hover"]`
-- Active State: `:active` AND `.state-active` AND `[data-state="active"]`
-- Focus State: `:focus-visible` AND `.state-focus` AND `[data-state="focus"]`
-- Disabled State: `:disabled` AND `[disabled]` AND `[disabled]` attribute
+- Default State: `.button`
+- Hover State: `:hover`
+- Active State: `:active`
+- Focus State: `:focus-visible`
+- Disabled State: `:disabled` on the native inner button (triggered by setting the `disabled` attribute on `<sds-button>`)
 
-By mapping static properties, `index.html` renders complete design-system states and variants preview grids that visually expose all components in their custom configurations for direct engineering and design reviews.
+Interactive state verification is performed directly inside the Storybook environment.
 
 ---
 

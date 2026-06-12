@@ -102,8 +102,8 @@ class SdsButton extends HTMLElement {
     // Create the native inner button
     const button = document.createElement('button');
     
-    // Set standard class hierarchy for pure CSS styling targeting
-    button.className = `sds-button variant-${variant} size-${size}`;
+    // Set standard class hierarchy for pure CSS styling targeting using BEM
+    button.className = `button button--${variant} button--${size}`;
     if (isDisabled) {
       button.disabled = true;
     }
@@ -111,7 +111,7 @@ class SdsButton extends HTMLElement {
     // Helper to generate Star SVG icon
     const createIconEl = () => {
       const iconSpan = document.createElement('span');
-      iconSpan.className = 'sds-button-icon';
+      iconSpan.className = 'button__icon';
       iconSpan.innerHTML = `
         <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.46669 0.8L9.52669 4.97333L14.1334 5.64667L10.8 8.89333L11.5867 13.48L7.46669 11.3133L3.34669 13.48L4.13336 8.89333L0.800023 5.64667L5.40669 4.97333L7.46669 0.8Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -127,7 +127,7 @@ class SdsButton extends HTMLElement {
 
     // Render the text label
     const labelSpan = document.createElement('span');
-    labelSpan.className = 'sds-button-label';
+    labelSpan.className = 'button__label';
     labelSpan.textContent = labelText;
     button.appendChild(labelSpan);
 

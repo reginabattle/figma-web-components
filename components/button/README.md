@@ -30,11 +30,11 @@ Standard button supporting both text labels and inline icons.
 Renders as:
 ```html
 <sds-button label="Submit" variant="neutral" icon-start="star">
-  <button class="sds-button variant-neutral size-medium">
-    <span class="sds-button-icon">
+  <button class="button button--neutral button--medium">
+    <span class="button__icon">
       <svg width="20" height="20" viewBox="0 0 15 15" fill="none">...</svg>
     </span>
-    <span class="sds-button-label">Submit</span>
+    <span class="button__label">Submit</span>
   </button>
 </sds-button>
 ```
