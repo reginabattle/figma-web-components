@@ -1,7 +1,13 @@
-/* SDS Button Styles */
+/* SDS Button & Button System Styles */
 
-sds-button {
+sds-button,
+sds-icon-button {
   display: inline-block;
+}
+
+sds-button-group {
+  display: block;
+  width: 100%;
 }
 
 /* Base styles */
@@ -30,17 +36,20 @@ sds-button {
 /* Medium size (Default) */
 .button--medium,
 sds-button[size="medium"] .button,
-sds-button:not([size]) .button {
-  padding: var(--sds-size-space-300, 12px) 16px;
+sds-button:not([size]) .button,
+sds-icon-button[size="medium"] .button,
+sds-icon-button:not([size]) .button {
+  padding: var(--sds-size-space-300, 12px) var(--sds-size-space-400, 16px);
   height: 40px;
 }
 
 /* Small size */
 .button--small,
-sds-button[size="small"] .button {
-  padding: var(--sds-size-space-200, 8px) 12px;
+sds-button[size="small"] .button,
+sds-icon-button[size="small"] .button {
+  padding: var(--sds-size-space-200, 8px) var(--sds-size-space-300, 12px);
   height: 32px;
-  font-size: 14px;
+  font-size: var(--sds-typography-body-size-small, 14px);
 }
 
 /* Primary variant */
@@ -62,7 +71,7 @@ sds-button[size="small"] .button {
 
 .button--primary:focus-visible {
   box-shadow:
-    0 0 0 2px #ffffff,
+    0 0 0 2px var(--sds-color-background-default-default, #ffffff),
     0 0 0 4px var(--sds-color-focus-ring, #2c2c2c);
 }
 
@@ -78,7 +87,8 @@ sds-button[disabled] .button {
 
 /* Neutral variant */
 .button--neutral,
-sds-button[variant="neutral"] .button {
+sds-button[variant="neutral"] .button,
+sds-icon-button[variant="neutral"] .button {
   background-color: var(--sds-color-background-neutral-default, #e3e3e3);
   border: var(--sds-size-stroke-border, 1px) solid var(--sds-color-border-neutral-default, #767676);
   color: var(--sds-color-text-neutral-on-neutral, #1e1e1e);
@@ -96,13 +106,14 @@ sds-button[variant="neutral"] .button {
 
 .button--neutral:focus-visible {
   box-shadow:
-    0 0 0 2px #ffffff,
+    0 0 0 2px var(--sds-color-background-default-default, #ffffff),
     0 0 0 4px var(--sds-color-focus-ring, #2c2c2c);
 }
 
 .button--neutral:disabled,
 .button--neutral[disabled],
-sds-button[variant="neutral"][disabled] .button {
+sds-button[variant="neutral"][disabled] .button,
+sds-icon-button[variant="neutral"][disabled] .button {
   background-color: var(--sds-color-background-neutral-disabled, #d9d9d9);
   border-color: var(--sds-color-border-neutral-disabled, #b3b3b3);
   color: var(--sds-color-text-neutral-disabled, #b3b3b3);
@@ -112,7 +123,8 @@ sds-button[variant="neutral"][disabled] .button {
 
 /* Subtle variant */
 .button--subtle,
-sds-button[variant="subtle"] .button {
+sds-button[variant="subtle"] .button,
+sds-icon-button[variant="subtle"] .button {
   background-color: transparent;
   border: var(--sds-size-stroke-border, 1px) solid transparent;
   color: var(--sds-color-text-subtle-default, #303030);
@@ -130,18 +142,154 @@ sds-button[variant="subtle"] .button {
 
 .button--subtle:focus-visible {
   box-shadow:
-    0 0 0 2px #ffffff,
+    0 0 0 2px var(--sds-color-background-default-default, #ffffff),
     0 0 0 4px var(--sds-color-focus-ring, #2c2c2c);
 }
 
 .button--subtle:disabled,
 .button--subtle[disabled],
-sds-button[variant="subtle"][disabled] .button {
+sds-button[variant="subtle"][disabled] .button,
+sds-icon-button[variant="subtle"][disabled] .button {
   background-color: transparent;
   border-color: transparent;
   color: var(--sds-color-text-neutral-disabled, #b3b3b3);
   cursor: not-allowed;
   pointer-events: none;
+}
+
+/* Danger (Primary Danger) variant */
+.button--danger,
+sds-button[variant="danger"] .button {
+  background-color: var(--sds-color-background-danger-default, #ec221f);
+  border: var(--sds-size-stroke-border, 1px) solid var(--sds-color-border-danger-default, #900b09);
+  color: var(--sds-color-text-brand-on-brand, #f5f5f5);
+}
+
+.button--danger:hover {
+  background-color: var(--sds-color-background-danger-hover, #c00f0c);
+  border-color: var(--sds-color-border-danger-secondary, #c00f0c);
+}
+
+.button--danger:active {
+  background-color: var(--sds-color-border-danger-default, #900b09);
+  border-color: var(--sds-color-border-danger-default, #900b09);
+}
+
+.button--danger:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--sds-color-background-default-default, #ffffff),
+    0 0 0 4px var(--sds-color-border-danger-tertiary, #ec221f);
+}
+
+.button--danger:disabled,
+.button--danger[disabled],
+sds-button[variant="danger"][disabled] .button {
+  background-color: var(--sds-color-background-danger-secondary, #fdd3d0);
+  border-color: var(--sds-color-background-danger-secondary, #fdd3d0);
+  color: var(--sds-color-text-danger-on-danger-secondary, #900b09);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Danger Subtle variant */
+.button--danger-subtle,
+sds-button[variant="danger-subtle"] .button {
+  background-color: transparent;
+  border: var(--sds-size-stroke-border, 1px) solid transparent;
+  color: var(--sds-color-text-danger-secondary, #c00f0c);
+}
+
+.button--danger-subtle:hover {
+  background-color: var(--sds-color-background-danger-tertiary, #fee9e7);
+  border-color: var(--sds-color-border-danger-tertiary, #ec221f);
+}
+
+.button--danger-subtle:active {
+  background-color: var(--sds-color-background-danger-secondary, #fdd3d0);
+  border-color: var(--sds-color-border-danger-secondary, #c00f0c);
+}
+
+.button--danger-subtle:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--sds-color-background-default-default, #ffffff),
+    0 0 0 4px var(--sds-color-border-danger-tertiary, #ec221f);
+}
+
+.button--danger-subtle:disabled,
+.button--danger-subtle[disabled],
+sds-button[variant="danger-subtle"][disabled] .button {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--sds-color-text-disabled-default, #b3b3b3);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Icon Button (Icon Only) Styles */
+.button--icon-only {
+  padding: 0 !important;
+  aspect-ratio: 1 / 1;
+}
+
+/* Figma High-Fidelity Icon Button Sizes */
+.button--icon-only.button--medium {
+  width: 44px;
+  height: 44px;
+}
+
+.button--icon-only.button--subtle.button--medium {
+  width: 40px;
+  height: 40px;
+}
+
+.button--icon-only.button--small {
+  width: 36px;
+  height: 36px;
+}
+
+/* Button Group layout classes */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sds-size-space-200, 8px);
+}
+
+.button-group--align-start {
+  justify-content: flex-start;
+}
+
+.button-group--align-end {
+  justify-content: flex-end;
+}
+
+.button-group--align-center {
+  justify-content: center;
+}
+
+/* Justified alignment where buttons fill width equally */
+.button-group--align-justify {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button-group--align-justify sds-button,
+.button-group--align-justify sds-icon-button,
+.button-group--align-justify .button {
+  flex: 1 1 0%;
+}
+
+/* Stack alignment (vertical column layout) */
+.button-group--align-stack {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.button-group--align-stack sds-button,
+.button-group--align-stack sds-icon-button,
+.button-group--align-stack .button {
+  width: 100%;
 }
 
 /* Inner elements */

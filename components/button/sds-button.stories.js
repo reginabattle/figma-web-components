@@ -27,7 +27,7 @@ export default {
     label: { control: 'text' },
     variant: {
       control: 'inline-radio',
-      options: ['primary', 'neutral', 'subtle'],
+      options: ['primary', 'neutral', 'subtle', 'danger', 'danger-subtle'],
     },
     size: {
       control: 'inline-radio',
@@ -115,3 +115,26 @@ export const Disabled = {
     iconEnd: false,
   },
 };
+
+export const Danger = {
+  args: {
+    label: 'Danger Button',
+    variant: 'danger',
+    size: 'medium',
+    disabled: false,
+    iconStart: false,
+    iconEnd: false,
+  },
+};
+
+export const DangerSubtle = {
+  args: {
+    label: 'Danger Subtle',
+    variant: 'danger-subtle',
+    size: 'medium',
+    disabled: false,
+    iconStart: false,
+    iconEnd: false,
+  },
+};
+

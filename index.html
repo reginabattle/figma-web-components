@@ -2,200 +2,298 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>
-      Simple Design System (SDS) - Button Components
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Design System (SDS) - Advanced Button System</title>
 
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="./styles/tokens.css" />
-    <link
-      rel="stylesheet"
-      href="./components/button/button.css" />
+    <link rel="stylesheet" href="./components/button/button.css" />
     <link rel="stylesheet" href="./styles/demo.css" />
 
     <!-- Load custom elements -->
-    <script
-      src="./components/button/sds-button.js"
-      defer></script>
+    <script src="./components/button/sds-button.js" defer></script>
+    <script src="./components/button/sds-icon-button.js" defer></script>
+    <script src="./components/button/sds-button-group.js" defer></script>
   </head>
   <body>
     <div class="container">
       <header>
         <div class="badge">SDS Component Preview</div>
-        <h1>Simple Design System (SDS) - Buttons</h1>
+        <h1>Simple Design System (SDS) - Button Suite</h1>
         <p class="description">
-          A high-fidelity implementation of the Figma SDS
-          Button and Icon Button components using Light DOM
-          web component architecture.
+          A high-fidelity implementation of the Figma SDS Button library (Buttons, Danger Buttons, Icon Buttons, and Button Groups) using Light DOM Web Components and advanced Foundations design tokens.
         </p>
       </header>
 
-      <!-- Section 1: Text Button States Board -->
-      <h2>1. Standard Button Board</h2>
-      <p class="description">
-        The standard text button
-        (<code>&lt;sds-button&gt;</code>) shown across all
-        three variants (Primary, Neutral, Subtle), sizes
-        (Medium, Small), and states. Standard pseudo-states
-        (like hover, active, and focus) are demonstrated
-        side-by-side using dedicated static attributes for
-        direct visual audit.
-      </p>
+      <!-- Section 1: Standard Buttons Board -->
+      <section class="demo-section">
+        <h2>1. Standard Buttons Board</h2>
+        <p class="description">
+          Standard text buttons (<code>&lt;sds-button&gt;</code>) shown across three variants (Primary, Neutral, Subtle) and two sizes (Medium, Small).
+        </p>
 
-      <div class="board-wrapper">
-        <div class="states-preview">
-          <!-- Headers -->
-          <div class="preview-header">State & Size</div>
-          <div class="preview-header">Primary</div>
-          <div class="preview-header">Neutral</div>
-          <div class="preview-header">Subtle</div>
+        <div class="board-wrapper">
+          <div class="states-preview">
+            <!-- Headers -->
+            <div class="preview-header">State & Size</div>
+            <div class="preview-header">Primary</div>
+            <div class="preview-header">Neutral</div>
+            <div class="preview-header">Subtle</div>
 
-          <!-- Default State (Medium) -->
-          <div class="state-name">Default (Medium)</div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="primary"
-              size="medium"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="neutral"
-              size="medium"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="subtle"
-              size="medium"></sds-button>
-          </div>
+            <!-- Default State (Medium) -->
+            <div class="state-name">Default (Medium)</div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="primary" size="medium"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="neutral" size="medium"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="subtle" size="medium"></sds-button>
+            </div>
 
-          <!-- Disabled State (Medium) -->
-          <div class="state-name">Disabled (Medium)</div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="primary"
-              size="medium"
-              disabled></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="neutral"
-              size="medium"
-              disabled></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="subtle"
-              size="medium"
-              disabled></sds-button>
-          </div>
+            <!-- Disabled State (Medium) -->
+            <div class="state-name">Disabled (Medium)</div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="primary" size="medium" disabled></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="neutral" size="medium" disabled></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="subtle" size="medium" disabled></sds-button>
+            </div>
 
-          <!-- Default State (Small) -->
-          <div class="state-name">Default (Small)</div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="primary"
-              size="small"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="neutral"
-              size="small"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="subtle"
-              size="small"></sds-button>
-          </div>
+            <!-- Default State (Small) -->
+            <div class="state-name">Default (Small)</div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="primary" size="small"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="neutral" size="small"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="subtle" size="small"></sds-button>
+            </div>
 
-          <!-- Disabled State (Small) -->
-          <div class="state-name">Disabled (Small)</div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="primary"
-              size="small"
-              disabled></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="neutral"
-              size="small"
-              disabled></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="subtle"
-              size="small"
-              disabled></sds-button>
-          </div>
+            <!-- Disabled State (Small) -->
+            <div class="state-name">Disabled (Small)</div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="primary" size="small" disabled></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="neutral" size="small" disabled></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="subtle" size="small" disabled></sds-button>
+            </div>
 
-          <!-- Default State with Start Icon (Medium) -->
-          <div class="state-name">
-            Default + Icon Left (Medium)
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="primary"
-              size="medium"
-              icon-start="star"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="neutral"
-              size="medium"
-              icon-start="star"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="subtle"
-              size="medium"
-              icon-start="star"></sds-button>
-          </div>
+            <!-- Default State with Icons -->
+            <div class="state-name">Icon Left (Medium)</div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="primary" size="medium" icon-start="star"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="neutral" size="medium" icon-start="star"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="subtle" size="medium" icon-start="star"></sds-button>
+            </div>
 
-          <!-- Default State with End Icon (Medium) -->
-          <div class="state-name">
-            Default + Icon Right (Medium)
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="primary"
-              size="medium"
-              icon-end="star"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="neutral"
-              size="medium"
-              icon-end="star"></sds-button>
-          </div>
-          <div class="button-preview">
-            <sds-button
-              label="Button"
-              variant="subtle"
-              size="medium"
-              icon-end="star"></sds-button>
+            <div class="state-name">Icon Right (Medium)</div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="primary" size="medium" icon-end="star"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="neutral" size="medium" icon-end="star"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Button" variant="subtle" size="medium" icon-end="star"></sds-button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Section 2: Danger Buttons Board -->
+      <section class="demo-section">
+        <h2>2. Danger Buttons Board</h2>
+        <p class="description">
+          Danger buttons (<code>&lt;sds-button variant="danger|danger-subtle"&gt;</code>) represent destructive or warning actions with complete semantic state coloring.
+        </p>
+
+        <div class="board-wrapper">
+          <div class="states-preview danger-preview">
+            <!-- Headers -->
+            <div class="preview-header">State & Size</div>
+            <div class="preview-header">Danger Primary</div>
+            <div class="preview-header">Danger Subtle</div>
+
+            <!-- Default State (Medium) -->
+            <div class="state-name">Default (Medium)</div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger" size="medium"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger-subtle" size="medium"></sds-button>
+            </div>
+
+            <!-- Disabled State (Medium) -->
+            <div class="state-name">Disabled (Medium)</div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger" size="medium" disabled></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger-subtle" size="medium" disabled></sds-button>
+            </div>
+
+            <!-- Default State (Small) -->
+            <div class="state-name">Default (Small)</div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger" size="small"></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger-subtle" size="small"></sds-button>
+            </div>
+
+            <!-- Disabled State (Small) -->
+            <div class="state-name">Disabled (Small)</div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger" size="small" disabled></sds-button>
+            </div>
+            <div class="button-preview">
+              <sds-button label="Delete" variant="danger-subtle" size="small" disabled></sds-button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Icon Buttons Board -->
+      <section class="demo-section">
+        <h2>3. Icon Buttons Board</h2>
+        <p class="description">
+          Dedicated standalone circular/rounded icon buttons (<code>&lt;sds-icon-button&gt;</code>). Sizing strictly matches Figma variable layouts (Primary/Neutral medium is 44px, Subtle medium is 40px, Small is 36px).
+        </p>
+
+        <div class="board-wrapper">
+          <div class="states-preview">
+            <!-- Headers -->
+            <div class="preview-header">State & Size</div>
+            <div class="preview-header">Primary</div>
+            <div class="preview-header">Neutral</div>
+            <div class="preview-header">Subtle</div>
+
+            <!-- Default State (Medium) -->
+            <div class="state-name">Default (Medium)</div>
+            <div class="button-preview">
+              <sds-icon-button variant="primary" size="medium"></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="neutral" size="medium"></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="subtle" size="medium"></sds-icon-button>
+            </div>
+
+            <!-- Disabled State (Medium) -->
+            <div class="state-name">Disabled (Medium)</div>
+            <div class="button-preview">
+              <sds-icon-button variant="primary" size="medium" disabled></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="neutral" size="medium" disabled></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="subtle" size="medium" disabled></sds-icon-button>
+            </div>
+
+            <!-- Default State (Small) -->
+            <div class="state-name">Default (Small)</div>
+            <div class="button-preview">
+              <sds-icon-button variant="primary" size="small"></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="neutral" size="small"></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="subtle" size="small"></sds-icon-button>
+            </div>
+
+            <!-- Disabled State (Small) -->
+            <div class="state-name">Disabled (Small)</div>
+            <div class="button-preview">
+              <sds-icon-button variant="primary" size="small" disabled></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="neutral" size="small" disabled></sds-icon-button>
+            </div>
+            <div class="button-preview">
+              <sds-icon-button variant="subtle" size="small" disabled></sds-icon-button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Button Groups Board -->
+      <section class="demo-section">
+        <h2>4. Button Groups Board</h2>
+        <p class="description">
+          Flexible layout containers (<code>&lt;sds-button-group align="..."&gt;</code>) designed to lay out buttons horizontally or vertically, spacing them accurately using the design tokens.
+        </p>
+
+        <div class="group-demo-container">
+          <div class="group-example">
+            <h4>Alignment: Start</h4>
+            <div class="group-box">
+              <sds-button-group align="start">
+                <sds-button label="Cancel" variant="neutral"></sds-button>
+                <sds-button label="Submit" variant="primary"></sds-button>
+              </sds-button-group>
+            </div>
+          </div>
+
+          <div class="group-example">
+            <h4>Alignment: Center</h4>
+            <div class="group-box">
+              <sds-button-group align="center">
+                <sds-button label="Back" variant="neutral"></sds-button>
+                <sds-button label="Continue" variant="primary"></sds-button>
+              </sds-button-group>
+            </div>
+          </div>
+
+          <div class="group-example">
+            <h4>Alignment: End</h4>
+            <div class="group-box">
+              <sds-button-group align="end">
+                <sds-button label="Cancel" variant="neutral"></sds-button>
+                <sds-button label="Delete" variant="danger"></sds-button>
+              </sds-button-group>
+            </div>
+          </div>
+
+          <div class="group-example">
+            <h4>Alignment: Justify (Equal grow)</h4>
+            <div class="group-box">
+              <sds-button-group align="justify">
+                <sds-button label="Option A" variant="neutral"></sds-button>
+                <sds-button label="Option B" variant="neutral"></sds-button>
+                <sds-button label="Option C" variant="primary"></sds-button>
+              </sds-button-group>
+            </div>
+          </div>
+
+          <div class="group-example">
+            <h4>Alignment: Stack (Responsive / Mobile)</h4>
+            <div class="group-box" style="max-width: 320px;">
+              <sds-button-group align="stack">
+                <sds-button label="Skip Setup" variant="subtle"></sds-button>
+                <sds-button label="Add Later" variant="neutral"></sds-button>
+                <sds-button label="Upgrade Now" variant="primary"></sds-button>
+              </sds-button-group>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
