@@ -76,5 +76,5 @@ We integrated **Storybook** on a dedicated `storybook` branch to offer an intera
    - Completely deleted the default `stories/` template folder to ensure the workspace remains pristine, lightweight, and focused solely on our custom design system.
 4. **Interactive Component Stories**:
    - Implemented `components/button/sds-button.stories.js` mapping all variants, sizes, and states (including start/end icons and disabled) to Storybook controls for real-time play and testing.
-5. **Static Showcase Simplification**:
+5. **Static Demo Simplification**:
    - Cleanly removed the live playground section (Section 3) and sandbox controller script from `index.html`, letting the static demo focus purely on the side-by-side visual audit grid of all variants/states, while delegating interactive testing entirely to Storybook.
