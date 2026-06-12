@@ -12,10 +12,7 @@ We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-
    - Background & Border: `#2c2c2c` (mapped to `--sds-color-background-brand-default` and `--sds-color-border-brand-default`).
    - On-brand Typography: `#f5f5f5` (mapped to `--sds-color-text-brand-on-brand`).
 2. **Spacing & Radius Parameters**:
-   <<<<<<< HEAD
-   - # Border radius: `8px` (`--sds-size-radius-200`).
    - Border radius: `8px` (`--sds-size-radius-200`) for standard buttons.
-     > > > > > > > 7d11b6b65f2799e61b6d118a0aa6d5c29ca08d14
    - Border stroke width: `1px` (`--sds-size-stroke-border`).
    - Button padding & layout: `12px` (`--sds-size-space-300`) and `8px` (`--sds-size-space-200`) respectively.
 
