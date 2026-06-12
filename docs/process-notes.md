@@ -6,12 +6,13 @@ This document records the design translation workflow and engineering choices ma
 
 ## 1. Token Extraction Workflow
 
-We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-server` integration on the full button set node `9762:425`. These design parameters map directly to CSS custom properties defined inside `styles/tokens.css`:
+We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-server` integration on the full button set node `9762:425`. These design parameters are organized inside `styles/tokens.css` using a premium **two-tier design token architecture** (Primitives & Semantics) to match industry standards:
 
-1. **Color Variables**:
-   - Background & Border: `#2c2c2c` (mapped to `--sds-color-background-brand-default` and `--sds-color-border-brand-default`).
-   - On-brand Typography: `#f5f5f5` (mapped to `--sds-color-text-brand-on-brand`).
-2. **Spacing & Radius Parameters**:
+1. **Primitive Tokens (Global Palette)**:
+   - Direct hex values extracted from Figma (e.g., `#2c2c2c` is mapped to `--sds-color-primitive-gray-800`, `#f5f5f5` is mapped to `--sds-color-primitive-gray-20`).
+2. **Semantic Tokens (Context Mapping)**:
+   - Intent-based design variables referencing the primitive tokens (e.g., `--sds-color-background-brand-default: var(--sds-color-primitive-gray-800);`).
+3. **Spacing & Radius Parameters**:
    - Border radius: `8px` (`--sds-size-radius-200`) for standard buttons.
    - Border stroke width: `1px` (`--sds-size-stroke-border`).
    - Button padding & layout: `12px` (`--sds-size-space-300`) and `8px` (`--sds-size-space-200`) respectively.
