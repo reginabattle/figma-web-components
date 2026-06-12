@@ -12,7 +12,10 @@ We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-
    - Background & Border: `#2c2c2c` (mapped to `--sds-color-background-brand-default` and `--sds-color-border-brand-default`).
    - On-brand Typography: `#f5f5f5` (mapped to `--sds-color-text-brand-on-brand`).
 2. **Spacing & Radius Parameters**:
-   - Border radius: `8px` (`--sds-size-radius-200`).
+   <<<<<<< HEAD
+   - # Border radius: `8px` (`--sds-size-radius-200`).
+   - Border radius: `8px` (`--sds-size-radius-200`) for standard buttons.
+     > > > > > > > 7d11b6b65f2799e61b6d118a0aa6d5c29ca08d14
    - Border stroke width: `1px` (`--sds-size-stroke-border`).
    - Button padding & layout: `12px` (`--sds-size-space-300`) and `8px` (`--sds-size-space-200`) respectively.
 
@@ -21,7 +24,8 @@ We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-
 ## 2. Architectural Choices
 
 ### Rationale for Light DOM (No Shadow DOM)
-To achieve complete fidelity to the standalone, framework-free requirements, we adopted a **Light DOM Web Component Architecture** for the `<sds-button>` custom element:
+
+To achieve complete fidelity to the standalone, framework-free requirements, we adopted a **Light DOM Web Component Architecture** for `<sds-button>`:
 
 1. **Local Filesystem Compatibility**:
    Shadow DOM components loaded as ES6 modules are blocked by standard web browsers under default local file access due to CORS policy limits. By avoiding ES6 modules and Shadow DOM fetching, our components register as standard scripts and are completely compatible with double-clicking and executing local files on any computer without requiring a local development server.
@@ -35,13 +39,14 @@ To achieve complete fidelity to the standalone, framework-free requirements, we 
 ## 3. Attribute-to-Component Mapping
 
 ### Standard Button (`<sds-button>`)
+
 The observed attributes on `<sds-button>` map directly to structure and class modifications on the internal `<button>` wrapper:
+
 - **`label`**: Extracted directly and set as `textContent` of an inner `.sds-button-label` span element. Fallback is the tag's original outer text content.
 - **`variant`**: Resolves to `.variant-[value]`. Standard options are `primary`, `neutral`, `subtle`.
 - **`size`**: Resolves to `.size-[value]`. Standard options are `medium`, `small`.
 - **`disabled`**: Sets the native `disabled` attribute directly on the child `<button>`.
 - **`icon-start`** and **`icon-end`**: Optional attributes that render an inline Star SVG icon inside a `.sds-button-icon` wrapper to the left (start) or right (end) of the label.
-
 
 ---
 
@@ -75,4 +80,3 @@ We integrated **Storybook** on a dedicated `storybook` branch to offer an intera
    - Implemented `components/button/sds-button.stories.js` mapping all variants, sizes, and states (including start/end icons and disabled) to Storybook controls for real-time play and testing.
 5. **Static Showcase Simplification**:
    - Cleanly removed the live playground section (Section 3) and sandbox controller script from `index.html`, letting the static demo focus purely on the side-by-side visual audit grid of all variants/states, while delegating interactive testing entirely to Storybook.
-
