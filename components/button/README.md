@@ -1,9 +1,8 @@
-# SDS Button Components Documentation
+# SDS Button Component Documentation
 
-The Simple Design System (SDS) provides two separate, lightweight custom element buttons built entirely inside the **Light DOM** for optimal performance, native form compatibility, and zero-build ease of use:
+The Simple Design System (SDS) provides a lightweight custom element button built entirely inside the **Light DOM** for optimal performance, native form compatibility, and zero-build ease of use:
 
-1. **`<sds-button>`**: Standard text button with solid text layout.
-2. **`<sds-icon-button>`**: Circular button containing a centered Star icon.
+- **`<sds-button>`**: Standard text button supporting both text labels and inline icons.
 
 ---
 
@@ -42,47 +41,13 @@ Renders as:
 
 ---
 
-## 2. Icon Button (`sds-icon-button`)
-
-Perfectly circular button containing a centered Star icon asset.
-
-### Attributes & API Reference
-
-| Attribute | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `variant` | `string` | `"primary"` | Icon button theme. Options: `"primary"`, `"neutral"`, `"subtle"`. |
-| `size` | `string` | `"medium"` | Button width and height scale. Options: `"medium"` (40px) or `"small"` (36px). |
-| `disabled` | `boolean` | `false` | If present, disables the button and applies disabled state styling. |
-
-### Light DOM HTML Structure
-
-```html
-<sds-icon-button variant="primary" size="small"></sds-icon-button>
-```
-
-Renders as:
-```html
-<sds-icon-button variant="primary" size="small">
-  <button class="sds-icon-button variant-primary size-small">
-    <span class="sds-icon-button-icon">
-      <svg width="20" height="20" viewBox="0 0 15 15" fill="none">...</svg>
-    </span>
-  </button>
-</sds-icon-button>
-```
-
----
-
 ## Programmatic Interface
 
-You can interact with both elements programmatically using standard JavaScript:
+You can interact with the element programmatically using standard JavaScript:
 
 ```javascript
 const textBtn = document.querySelector('sds-button');
 textBtn.label = "Apply Changes";
 textBtn.variant = "subtle";
-
-const iconBtn = document.querySelector('sds-icon-button');
-iconBtn.size = "small";
-iconBtn.disabled = true;
+textBtn.disabled = true;
 ```
