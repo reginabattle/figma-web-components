@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>
+      Simple Design System (SDS) - Button Components
+    </title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./components/button/button.css" />
+    <link rel="stylesheet" href="./styles/demo.css" />
+
+    <!-- Load custom elements -->
+    <script
+      src="./components/button/sds-button.js"
+      defer></script>
+    <script
+      src="./components/button/sds-icon-button.js"
+      defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="badge">SDS Component Preview</div>
+        <h1>Simple Design System (SDS) - Buttons</h1>
+        <p class="description">
+          A high-fidelity implementation of the Figma SDS
+          Button and Icon Button components using Light DOM web component
+          architecture.
+        </p>
+      </header>
+
+      <!-- Section 1: Text Button States Board -->
+      <h2>1. Standard Button Board</h2>
+      <p class="description">
+        The standard text button (<code>&lt;sds-button&gt;</code>) shown across all three variants (Primary, Neutral, Subtle), sizes (Medium, Small), and states. Standard pseudo-states (like hover, active, and focus) are demonstrated side-by-side using dedicated static attributes for direct visual audit.
+      </p>
+
+      <div class="board-wrapper">
+        <div class="states-preview">
+        <!-- Headers -->
+        <div class="preview-header">State & Size</div>
+        <div class="preview-header">Primary</div>
+        <div class="preview-header">Neutral</div>
+        <div class="preview-header">Subtle</div>
+
+        <!-- Default State (Medium) -->
+        <div class="state-name">Default (Medium)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="medium"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="medium"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="medium"></sds-button>
+        </div>
+
+        <!-- Hover State (Medium) -->
+        <div class="state-name">Hover (Medium, Static)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="medium" data-state="hover"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="medium" data-state="hover"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="medium" data-state="hover"></sds-button>
+        </div>
+
+        <!-- Active State (Medium) -->
+        <div class="state-name">Active (Medium, Static)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="medium" data-state="active"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="medium" data-state="active"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="medium" data-state="active"></sds-button>
+        </div>
+
+        <!-- Focus State (Medium) -->
+        <div class="state-name">Focus (Medium, Static)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="medium" data-state="focus"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="medium" data-state="focus"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="medium" data-state="focus"></sds-button>
+        </div>
+
+        <!-- Disabled State (Medium) -->
+        <div class="state-name">Disabled (Medium)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="medium" disabled></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="medium" disabled></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="medium" disabled></sds-button>
+        </div>
+
+        <!-- Default State (Small) -->
+        <div class="state-name">Default (Small)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="small"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="small"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="small"></sds-button>
+        </div>
+
+        <!-- Hover State (Small) -->
+        <div class="state-name">Hover (Small, Static)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="small" data-state="hover"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="small" data-state="hover"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="small" data-state="hover"></sds-button>
+        </div>
+
+        <!-- Disabled State (Small) -->
+        <div class="state-name">Disabled (Small)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="small" disabled></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="small" disabled></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="small" disabled></sds-button>
+        </div>
+
+        <!-- Default State with Start Icon (Medium) -->
+        <div class="state-name">Default + Icon Left (Medium)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="medium" icon-start="star"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="medium" icon-start="star"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="medium" icon-start="star"></sds-button>
+        </div>
+
+        <!-- Default State with End Icon (Medium) -->
+        <div class="state-name">Default + Icon Right (Medium)</div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="primary" size="medium" icon-end="star"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="neutral" size="medium" icon-end="star"></sds-button>
+        </div>
+        <div class="button-preview">
+          <sds-button label="Button" variant="subtle" size="medium" icon-end="star"></sds-button>
+        </div>
+      </div>
+    </div>
+
+      <!-- Section 2: Icon Button Board -->
+      <h2>2. Circular Icon Button Board</h2>
+      <p class="description">
+        The separate Icon Button component set (<code>&lt;sds-icon-button&gt;</code>) featuring a perfectly circular layout with centered icon assets across all variants, sizes, and interactive states.
+      </p>
+
+      <div class="board-wrapper">
+        <div class="variants-sizes-preview">
+          <!-- Headers -->
+          <div class="preview-header">State & Size</div>
+        <div class="preview-header">Primary</div>
+        <div class="preview-header">Neutral</div>
+        <div class="preview-header">Subtle</div>
+
+        <!-- Default State (Medium) -->
+        <div class="state-name">Default (Medium)</div>
+        <div class="button-preview">
+          <sds-icon-button variant="primary" size="medium"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="neutral" size="medium"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="subtle" size="medium"></sds-icon-button>
+        </div>
+
+        <!-- Hover State (Medium) -->
+        <div class="state-name">Hover (Medium, Static)</div>
+        <div class="button-preview">
+          <sds-icon-button variant="primary" size="medium" data-state="hover"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="neutral" size="medium" data-state="hover"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="subtle" size="medium" data-state="hover"></sds-icon-button>
+        </div>
+
+        <!-- Disabled State (Medium) -->
+        <div class="state-name">Disabled (Medium)</div>
+        <div class="button-preview">
+          <sds-icon-button variant="primary" size="medium" disabled></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="neutral" size="medium" disabled></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="subtle" size="medium" disabled></sds-icon-button>
+        </div>
+
+        <!-- Default State (Small) -->
+        <div class="state-name">Default (Small)</div>
+        <div class="button-preview">
+          <sds-icon-button variant="primary" size="small"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="neutral" size="small"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="subtle" size="small"></sds-icon-button>
+        </div>
+
+        <!-- Hover State (Small) -->
+        <div class="state-name">Hover (Small, Static)</div>
+        <div class="button-preview">
+          <sds-icon-button variant="primary" size="small" data-state="hover"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="neutral" size="small" data-state="hover"></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="subtle" size="small" data-state="hover"></sds-icon-button>
+        </div>
+
+        <!-- Disabled State (Small) -->
+        <div class="state-name">Disabled (Small)</div>
+        <div class="button-preview">
+          <sds-icon-button variant="primary" size="small" disabled></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="neutral" size="small" disabled></sds-icon-button>
+        </div>
+        <div class="button-preview">
+          <sds-icon-button variant="subtle" size="small" disabled></sds-icon-button>
+        </div>
+      </div>
+    </div>
+
+      <!-- Section 3: Interactive Sandbox -->
+      <h2>3. Live Interactive Playground</h2>
+      <div class="sandbox">
+        <div class="sandbox-controls">
+          <div class="control-group">
+            <label for="componentTypeSelect">Component Type</label>
+            <select id="componentTypeSelect">
+              <option value="standard" selected>Standard Button (&lt;sds-button&gt;)</option>
+              <option value="icon">Icon Button (&lt;sds-icon-button&gt;)</option>
+            </select>
+          </div>
+
+          <div class="control-group" id="labelControlGroup">
+            <label for="labelInput">Button Label</label>
+            <input
+              type="text"
+              id="labelInput"
+              value="Interactive Button" />
+          </div>
+
+          <div class="control-group">
+            <label for="variantSelect">Variant</label>
+            <select id="variantSelect">
+              <option value="primary" selected>Primary</option>
+              <option value="neutral">Neutral</option>
+              <option value="subtle">Subtle</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="sizeSelect">Size</label>
+            <select id="sizeSelect">
+              <option value="medium" selected>Medium</option>
+              <option value="small">Small</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label class="checkbox-group">
+              <input type="checkbox" id="disabledCheck" />
+              disabled
+            </label>
+          </div>
+
+          <div class="control-group" id="iconsControlGroup">
+            <label class="checkbox-group">
+              <input type="checkbox" id="iconStartCheck" />
+              icon-start
+            </label>
+            <label class="checkbox-group" style="margin-top: 8px;">
+              <input type="checkbox" id="iconEndCheck" />
+              icon-end
+            </label>
+          </div>
+        </div>
+
+        <div class="sandbox-preview">
+          <!-- Live interactive component placeholder container -->
+          <div id="livePreviewContainer">
+            <sds-button
+              id="liveButton"
+              label="Interactive Button"></sds-button>
+          </div>
+
+          <div class="code-output" id="codeBlock">
+            &lt;sds-button label="Interactive Button"&gt;&lt;/sds-button&gt;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sandbox Controller Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const typeSel = document.getElementById("componentTypeSelect");
+        const labelIn = document.getElementById("labelInput");
+        const variantSel = document.getElementById("variantSelect");
+        const sizeSel = document.getElementById("sizeSelect");
+        const disabledCh = document.getElementById("disabledCheck");
+        const iconStartCh = document.getElementById("iconStartCheck");
+        const iconEndCh = document.getElementById("iconEndCheck");
+        const labelGroup = document.getElementById("labelControlGroup");
+        const iconsGroup = document.getElementById("iconsControlGroup");
+        const previewContainer = document.getElementById("livePreviewContainer");
+        const codeBlock = document.getElementById("codeBlock");
+
+        function updateLiveButton() {
+          const isStandard = typeSel.value === "standard";
+          const label = labelIn.value;
+          const variant = variantSel.value;
+          const size = sizeSel.value;
+          const isDisabled = disabledCh.checked;
+          const isIconStart = iconStartCh.checked;
+          const isIconEnd = iconEndCh.checked;
+
+          // Toggle visibility of standard-only fields
+          if (isStandard) {
+            labelGroup.style.display = "flex";
+            iconsGroup.style.display = "flex";
+          } else {
+            labelGroup.style.display = "none";
+            iconsGroup.style.display = "none";
+          }
+
+          // Generate appropriate web component
+          let activeEl;
+          let codeStr = "";
+
+          if (isStandard) {
+            activeEl = document.createElement("sds-button");
+            activeEl.setAttribute("label", label);
+            codeStr = `<sds-button label="${escapeHtml(label)}"`;
+            if (isIconStart) {
+              activeEl.setAttribute("icon-start", "star");
+              codeStr += ` icon-start`;
+            }
+            if (isIconEnd) {
+              activeEl.setAttribute("icon-end", "star");
+              codeStr += ` icon-end`;
+            }
+          } else {
+            activeEl = document.createElement("sds-icon-button");
+            codeStr = `<sds-icon-button`;
+          }
+
+          if (variant !== "primary") {
+            activeEl.setAttribute("variant", variant);
+            codeStr += ` variant="${variant}"`;
+          }
+          if (size !== "medium") {
+            activeEl.setAttribute("size", size);
+            codeStr += ` size="${size}"`;
+          }
+          if (isDisabled) {
+            activeEl.setAttribute("disabled", "");
+            codeStr += ` disabled`;
+          }
+
+          codeStr += `></${isStandard ? "sds-button" : "sds-icon-button"}>`;
+
+          // Update live preview DOM node
+          previewContainer.innerHTML = "";
+          previewContainer.appendChild(activeEl);
+
+          // Output HTML code
+          codeBlock.textContent = codeStr;
+        }
+
+        function escapeHtml(str) {
+          return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+        }
+
+        // Attach event listeners
+        typeSel.addEventListener("change", updateLiveButton);
+        labelIn.addEventListener("input", updateLiveButton);
+        variantSel.addEventListener("change", updateLiveButton);
+        sizeSel.addEventListener("change", updateLiveButton);
+        disabledCh.addEventListener("change", updateLiveButton);
+        iconStartCh.addEventListener("change", updateLiveButton);
+        iconEndCh.addEventListener("change", updateLiveButton);
+
+        // Initial update
+        updateLiveButton();
+      });
+    </script>
+  </body>
+</html>

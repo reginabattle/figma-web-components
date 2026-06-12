@@ -1,0 +1,52 @@
+/* Simple Design System (SDS) Design Tokens */
+
+:root {
+  /* Colors - Brand / Primary Component */
+  --sds-color-background-brand-default: #2c2c2c;
+  --sds-color-border-brand-default: #2c2c2c;
+  --sds-color-text-brand-on-brand: #f5f5f5;
+
+  /* Colors - Brand Interactive States */
+  --sds-color-background-brand-hover: #3e3e3e;
+  --sds-color-border-brand-hover: #3e3e3e;
+  --sds-color-background-brand-active: #1a1a1a;
+  --sds-color-border-brand-active: #1a1a1a;
+  --sds-color-background-brand-disabled: #f0f0f0;
+  --sds-color-border-brand-disabled: #e2e2e2;
+  --sds-color-text-brand-disabled: #a3a3a3;
+
+  /* Colors - Neutral Component */
+  --sds-color-background-neutral-default: #e3e3e3;
+  --sds-color-border-neutral-default: #767676;
+  --sds-color-text-neutral-on-neutral: #1e1e1e;
+
+  /* Colors - Neutral Interactive States */
+  --sds-color-background-neutral-hover: #cdcdcd;
+  --sds-color-border-neutral-hover: #767676;
+  --sds-color-background-neutral-active: #b5b3b3;
+  --sds-color-border-neutral-active: #767676;
+  --sds-color-background-neutral-disabled: #d9d9d9;
+  --sds-color-border-neutral-disabled: #b3b3b3;
+  --sds-color-text-neutral-disabled: #b3b3b3;
+
+  /* Colors - Subtle Component */
+  --sds-color-text-subtle-default: #303030;
+  --sds-color-border-subtle-hover: #d9d9d9;
+  --sds-color-background-subtle-active: rgba(0, 0, 0, 0.05);
+
+  /* Focus Indicator */
+  --sds-color-focus-ring: #2c2c2c;
+
+  /* Typography */
+  --sds-typography-body-font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sds-typography-body-size-medium: 16px;
+  --sds-typography-body-font-weight-regular: 400;
+  --sds-typography-body-font-weight-medium: 500;
+
+  /* Sizes, Spacing & Layout */
+  --sds-size-space-200: 8px;
+  --sds-size-space-300: 12px;
+  --sds-size-space-400: 16px;
+  --sds-size-radius-200: 8px;
+  --sds-size-stroke-border: 1px;
+}

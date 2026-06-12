@@ -1,0 +1,256 @@
+/* Minimal Light Theme for Demo Page */
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 50px 20px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 25px;
+  margin-bottom: 40px;
+}
+
+/* Minimal Badge */
+.badge {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  color: #666666;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  color: #111111;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+}
+
+p.description {
+  color: #666666;
+  font-size: 15px;
+  margin: 0;
+}
+
+h2 {
+  color: #111111;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 40px 0 10px 0;
+}
+
+/* Page Section Descriptions */
+h2 + p.description {
+  margin-bottom: 20px;
+  color: #707070;
+}
+
+/* Board Wrapper - For responsive horizontal scrolling on small viewports */
+.board-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Tableless Grids - Minimal White Board Look */
+.states-preview,
+.variants-sizes-preview {
+  display: grid;
+  grid-template-columns: 160px repeat(3, 1fr);
+  gap: 1px;
+  background-color: #e0e0e0;
+  min-width: 760px; /* Establishes a comfortable min-width to avoid word-wrapping/overlap on small viewports */
+}
+
+.preview-header {
+  background-color: #fafafa;
+  color: #444444;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.state-name {
+  background-color: #ffffff;
+  font-weight: 600;
+  color: #666666;
+  font-size: 13px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.button-preview {
+  background-color: #ffffff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Minimal Playground Styling */
+.sandbox {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .sandbox {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.sandbox-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444444;
+}
+
+.control-group input[type="text"],
+.control-group select {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  color: #1a1a1a;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.control-group input[type="text"]:focus,
+.control-group select:focus {
+  border-color: #2c2c2c;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #444444;
+}
+
+.checkbox-group input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.sandbox-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 40px;
+  min-height: 150px;
+  position: relative;
+}
+
+/* Simple Preview Environment Header */
+.sandbox-preview::before {
+  content: 'Canvas Preview';
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Simple Monospaced Code Box */
+.code-output {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-top: 30px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  color: #333333;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Mobile responsive enhancements */
+@media (max-width: 480px) {
+  body {
+    padding: 30px 12px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .sandbox {
+    padding: 16px;
+  }
+  
+  .sandbox-preview {
+    padding: 30px 15px;
+  }
+}
