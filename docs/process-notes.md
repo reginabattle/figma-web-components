@@ -12,7 +12,7 @@ We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-
    - Background & Border: `#2c2c2c` (mapped to `--sds-color-background-brand-default` and `--sds-color-border-brand-default`).
    - On-brand Typography: `#f5f5f5` (mapped to `--sds-color-text-brand-on-brand`).
 2. **Spacing & Radius Parameters**:
-   - Border radius: `8px` (`--sds-size-radius-200`) for standard buttons, and `32px` for circular icon buttons.
+   - Border radius: `8px` (`--sds-size-radius-200`).
    - Border stroke width: `1px` (`--sds-size-stroke-border`).
    - Button padding & layout: `12px` (`--sds-size-space-300`) and `8px` (`--sds-size-space-200`) respectively.
 
@@ -21,7 +21,7 @@ We retrieved design variables from Figma Dev Mode using the `figma-dev-mode-mcp-
 ## 2. Architectural Choices
 
 ### Rationale for Light DOM (No Shadow DOM)
-To achieve complete fidelity to the standalone, framework-free requirements, we adopted a **Light DOM Web Component Architecture** for both `<sds-button>` and `<sds-icon-button>`:
+To achieve complete fidelity to the standalone, framework-free requirements, we adopted a **Light DOM Web Component Architecture** for the `<sds-button>` custom element:
 
 1. **Local Filesystem Compatibility**:
    Shadow DOM components loaded as ES6 modules are blocked by standard web browsers under default local file access due to CORS policy limits. By avoiding ES6 modules and Shadow DOM fetching, our components register as standard scripts and are completely compatible with double-clicking and executing local files on any computer without requiring a local development server.
@@ -42,12 +42,6 @@ The observed attributes on `<sds-button>` map directly to structure and class mo
 - **`disabled`**: Sets the native `disabled` attribute directly on the child `<button>`.
 - **`icon-start`** and **`icon-end`**: Optional attributes that render an inline Star SVG icon inside a `.sds-button-icon` wrapper to the left (start) or right (end) of the label.
 
-### Icon Button (`<sds-icon-button>`)
-Observed attributes map directly to the circular button:
-- **`variant`**: Resolves to `.variant-[value]`.
-- **`size`**: Resolves to `.size-[value]`.
-- **`disabled`**: Sets the native `disabled` attribute directly on the child `<button>`.
-- Renders an inline vector SVG `Star` centered inside the circular button wrapper.
 
 ---
 
@@ -55,10 +49,30 @@ Observed attributes map directly to the circular button:
 
 To verify visual correctness across all potential states side-by-side, we map interactive states in `button.css` to both real pseudo-classes and mock static classes:
 
-- Default State: `.sds-button` / `.sds-icon-button`
+- Default State: `.sds-button`
 - Hover State: `:hover` AND `.state-hover` AND `[data-state="hover"]`
 - Active State: `:active` AND `.state-active` AND `[data-state="active"]`
 - Focus State: `:focus-visible` AND `.state-focus` AND `[data-state="focus"]`
 - Disabled State: `:disabled` AND `[disabled]` AND `[disabled]` attribute
 
 By mapping static properties, `index.html` renders complete design-system states and variants preview grids that visually expose all components in their custom configurations for direct engineering and design reviews.
+
+---
+
+## 5. Storybook Integration (Storybook Branch)
+
+We integrated **Storybook** on a dedicated `storybook` branch to offer an interactive component environment while keeping `index.html` clean and minimal:
+
+1. **Clean Installation**:
+   - Switched to a new `storybook` git branch.
+   - Initialized `package.json` and ran a non-interactive Storybook configuration targeted for vanilla HTML and Vite (`npx storybook init --type html --builder vite --yes`).
+2. **Environment Configuration**:
+   - Set up `.storybook/preview.js` to dynamically load global design tokens (`styles/tokens.css`), component styles (`components/button/button.css`), and register our Light DOM Web Component globally (`components/button/sds-button.js`).
+   - Configured `.storybook/main.js` to discover story files directly inside the `components/` folder, allowing us to keep story files next to their components.
+3. **Boilerplate Cleanup**:
+   - Completely deleted the default `stories/` template folder to ensure the workspace remains pristine, lightweight, and focused solely on our custom design system.
+4. **Interactive Component Stories**:
+   - Implemented `components/button/sds-button.stories.js` mapping all variants, sizes, and states (including start/end icons and disabled) to Storybook controls for real-time play and testing.
+5. **Static Showcase Simplification**:
+   - Cleanly removed the live playground section (Section 3) and sandbox controller script from `index.html`, letting the static demo focus purely on the side-by-side visual audit grid of all variants/states, while delegating interactive testing entirely to Storybook.
+
