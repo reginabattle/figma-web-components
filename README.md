@@ -12,7 +12,7 @@ The components are built using native Light DOM web component architectures with
 ├── .storybook/          # Storybook configuration
 ├── components/          # Web component implementations
 │   └── button/          # Button component
-│       ├── button.css   # Styles for the button
+│       ├── sds-button.css   # Styles for the button
 │       ├── sds-button.js      # Button element implementation
 │       └── sds-button.stories.js # Storybook stories for the button
 ├── styles/              # Global styles

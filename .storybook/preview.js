@@ -1,5 +1,5 @@
 import '../styles/tokens.css';
-import '../components/button/button.css';
+import '../components/button/sds-button.css';
 import '../components/button/sds-button.js';
 
 /** @type { import('@storybook/html-vite').Preview } */
