@@ -1,7 +1,7 @@
 import { html } from 'lit';
 
 export default {
-  title: 'Components/SdsButtonGroup',
+  title: 'Components/Button Group',
   tags: ['autodocs'],
   render: (args) => {
     // Render the custom element group containing SDS button children using declarative lit-html template syntax

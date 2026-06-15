@@ -1,7 +1,7 @@
 import { html } from 'lit';
 
 export default {
-  title: 'Components/SdsButton',
+  title: 'Components/Button',
   tags: ['autodocs'],
   render: (args) => {
     // Render the custom element using clean, declarative lit-html template syntax
