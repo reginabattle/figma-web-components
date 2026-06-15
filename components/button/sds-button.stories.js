@@ -21,6 +21,13 @@ export default {
     } else {
       btn.removeAttribute('icon-end');
     }
+    if (args.href) {
+      btn.setAttribute('href', args.href);
+    } else {
+      btn.removeAttribute('href');
+    }
+    if (args.target) btn.setAttribute('target', args.target);
+    if (args.type) btn.setAttribute('type', args.type);
     return btn;
   },
   argTypes: {
@@ -36,6 +43,9 @@ export default {
     disabled: { control: 'boolean' },
     iconStart: { name: 'Icon Start', control: 'boolean' },
     iconEnd: { name: 'Icon End', control: 'boolean' },
+    href: { control: 'text' },
+    target: { control: 'text' },
+    type: { control: 'text' },
   },
 };
 

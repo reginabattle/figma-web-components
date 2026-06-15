@@ -1,11 +1,5 @@
-/* SDS Button Styles */
-
-sds-button {
-  display: inline-block;
-}
-
 /* Base styles */
-.button {
+.sds-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -28,47 +22,43 @@ sds-button {
 }
 
 /* Medium size (Default) */
-.button--medium,
-sds-button[size="medium"] .button,
-sds-button:not([size]) .button {
+.sds-button--medium {
   padding: var(--sds-size-space-300, 12px) 16px;
   height: 40px;
 }
 
 /* Small size */
-.button--small,
-sds-button[size="small"] .button {
+.sds-button--small {
   padding: var(--sds-size-space-200, 8px) 12px;
   height: 32px;
   font-size: 14px;
 }
 
-/* Primary variant */
-.button--primary {
+/* Primary style */
+.sds-button--primary {
   background-color: var(--sds-color-background-brand-default, #2c2c2c);
   border: var(--sds-size-stroke-border, 1px) solid var(--sds-color-border-brand-default, #2c2c2c);
   color: var(--sds-color-text-brand-on-brand, #f5f5f5);
 }
 
-.button--primary:hover {
+.sds-button--primary:hover {
   background-color: var(--sds-color-background-brand-hover, #3e3e3e);
   border-color: var(--sds-color-border-brand-hover, #3e3e3e);
 }
 
-.button--primary:active {
+.sds-button--primary:active {
   background-color: var(--sds-color-background-brand-active, #1a1a1a);
   border-color: var(--sds-color-border-brand-active, #1a1a1a);
 }
 
-.button--primary:focus-visible {
+.sds-button--primary:focus-visible {
   box-shadow:
     0 0 0 2px #ffffff,
     0 0 0 4px var(--sds-color-focus-ring, #2c2c2c);
 }
 
-.button--primary:disabled,
-.button--primary[disabled],
-sds-button[disabled] .button {
+.sds-button--primary[disabled],
+sds-button[disabled].sds-button--primary {
   background-color: var(--sds-color-background-brand-disabled, #f0f0f0);
   border-color: var(--sds-color-border-brand-disabled, #e2e2e2);
   color: var(--sds-color-text-brand-disabled, #a3a3a3);
@@ -76,33 +66,31 @@ sds-button[disabled] .button {
   pointer-events: none;
 }
 
-/* Neutral variant */
-.button--neutral,
-sds-button[variant="neutral"] .button {
+/* Neutral style */
+.sds-button--neutral {
   background-color: var(--sds-color-background-neutral-default, #e3e3e3);
   border: var(--sds-size-stroke-border, 1px) solid var(--sds-color-border-neutral-default, #767676);
   color: var(--sds-color-text-neutral-on-neutral, #1e1e1e);
 }
 
-.button--neutral:hover {
+.sds-button--neutral:hover {
   background-color: var(--sds-color-background-neutral-hover, #cdcdcd);
   border-color: var(--sds-color-border-neutral-hover, #767676);
 }
 
-.button--neutral:active {
+.sds-button--neutral:active {
   background-color: var(--sds-color-background-neutral-active, #b5b3b3);
   border-color: var(--sds-color-border-neutral-active, #767676);
 }
 
-.button--neutral:focus-visible {
+.sds-button--neutral:focus-visible {
   box-shadow:
     0 0 0 2px #ffffff,
     0 0 0 4px var(--sds-color-focus-ring, #2c2c2c);
 }
 
-.button--neutral:disabled,
-.button--neutral[disabled],
-sds-button[variant="neutral"][disabled] .button {
+.sds-button--neutral[disabled],
+sds-button[variant="neutral"][disabled] {
   background-color: var(--sds-color-background-neutral-disabled, #d9d9d9);
   border-color: var(--sds-color-border-neutral-disabled, #b3b3b3);
   color: var(--sds-color-text-neutral-disabled, #b3b3b3);
@@ -110,33 +98,31 @@ sds-button[variant="neutral"][disabled] .button {
   pointer-events: none;
 }
 
-/* Subtle variant */
-.button--subtle,
-sds-button[variant="subtle"] .button {
+/* Subtle style */
+.sds-button--subtle {
   background-color: transparent;
   border: var(--sds-size-stroke-border, 1px) solid transparent;
   color: var(--sds-color-text-subtle-default, #303030);
 }
 
-.button--subtle:hover {
+.sds-button--subtle:hover {
   background-color: transparent;
   border-color: var(--sds-color-border-subtle-hover, #d9d9d9);
 }
 
-.button--subtle:active {
+.sds-button--subtle:active {
   background-color: var(--sds-color-background-subtle-active, rgba(0, 0, 0, 0.05));
   border-color: var(--sds-color-border-subtle-hover, #d9d9d9);
 }
 
-.button--subtle:focus-visible {
+.sds-button--subtle:focus-visible {
   box-shadow:
     0 0 0 2px #ffffff,
     0 0 0 4px var(--sds-color-focus-ring, #2c2c2c);
 }
 
-.button--subtle:disabled,
-.button--subtle[disabled],
-sds-button[variant="subtle"][disabled] .button {
+.sds-button--subtle[disabled],
+sds-button[variant="subtle"][disabled] {
   background-color: transparent;
   border-color: transparent;
   color: var(--sds-color-text-neutral-disabled, #b3b3b3);
@@ -145,11 +131,11 @@ sds-button[variant="subtle"][disabled] .button {
 }
 
 /* Inner elements */
-.button__label {
+.sds-button__label {
   white-space: nowrap;
 }
 
-.button__icon {
+.sds-button__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -158,13 +144,13 @@ sds-button[variant="subtle"][disabled] .button {
   flex-shrink: 0;
 }
 
-.button__icon svg {
+.sds-button__icon svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.button--small .button__icon {
+.sds-button--small .sds-button__icon {
   width: 16px;
   height: 16px;
 }

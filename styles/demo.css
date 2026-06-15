@@ -69,7 +69,7 @@ h2 + p.description {
   color: #707070;
 }
 
-/* Board Wrapper - For responsive horizontal scrolling on small viewports */
+/* Board Wrapper - For horizontal scrolling on small screens */
 .board-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -80,7 +80,7 @@ h2 + p.description {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* Tableless Grids - Minimal White Board Look */
+/* Grid layouts */
 .states-preview,
 .variants-sizes-preview {
   display: grid;
@@ -120,7 +120,7 @@ h2 + p.description {
 }
 
 
-/* Mobile responsive enhancements */
+/* Styles for small screens */
 @media (max-width: 480px) {
   body {
     padding: 30px 12px;
