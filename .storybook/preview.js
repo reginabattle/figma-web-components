@@ -1,6 +1,8 @@
 import '../styles/tokens.css';
 import '../components/button/sds-button.css';
 import '../components/button/sds-button.js';
+import '../components/button/sds-icon-button.js';
+import '../components/button/sds-button-group.js';
 
 /** @type { import('@storybook/html-vite').Preview } */
 const preview = {

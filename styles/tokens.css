@@ -19,6 +19,13 @@
   --sds-color-primitive-gray-20: #f5f5f5;
   --sds-color-primitive-white: #ffffff;
 
+  /* Red Colors */
+  --sds-color-primitive-red-900: #900b09;
+  --sds-color-primitive-red-700: #c00f0c;
+  --sds-color-primitive-red-500: #ec221f;
+  --sds-color-primitive-red-200: #fdd3d0;
+  --sds-color-primitive-red-50: #fee9e7;
+
   /* Colors for buttons and elements */
 
   /* Main button styles */
@@ -53,6 +60,21 @@
   --sds-color-text-subtle-default: var(--sds-color-primitive-gray-750);
   --sds-color-border-subtle-hover: var(--sds-color-primitive-gray-150);
   --sds-color-background-subtle-active: rgba(0, 0, 0, 0.05);
+
+  /* Danger button styles */
+  --sds-color-background-danger-default: var(--sds-color-primitive-red-500);
+  --sds-color-border-danger-secondary: var(--sds-color-primitive-red-700);
+  --sds-color-text-danger-on-danger: var(--sds-color-primitive-red-50);
+  --sds-color-background-danger-hover: var(--sds-color-primitive-red-700);
+  --sds-color-border-danger-default: var(--sds-color-primitive-red-900);
+  --sds-color-text-danger-default: var(--sds-color-primitive-red-900);
+  --sds-color-background-danger-tertiary-hover: var(--sds-color-primitive-red-200);
+
+  /* Standard disabled states */
+  --sds-color-background-disabled-default: var(--sds-color-primitive-gray-150);
+  --sds-color-border-disabled-default: var(--sds-color-primitive-gray-300);
+  --sds-color-text-disabled-on-disabled: var(--sds-color-primitive-gray-300);
+  --sds-color-text-disabled-default: var(--sds-color-primitive-gray-300);
 
   /* Focus outline style */
   --sds-color-focus-ring: var(--sds-color-primitive-gray-800);
