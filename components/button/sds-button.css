@@ -357,7 +357,7 @@ sds-button[variant="subtle-danger"][disabled] {
 .sds-button-group {
   display: flex;
   gap: var(--sds-size-space-200, 8px);
-  width: max-content;
+  width: 100%;
 }
 
 .sds-button-group--align-start {
@@ -374,10 +374,8 @@ sds-button[variant="subtle-danger"][disabled] {
 
 .sds-button-group--align-justify {
   justify-content: space-between;
-  width: 100%;
 }
 
 .sds-button-group--align-stack {
   flex-direction: column;
-  width: 100%;
 }
